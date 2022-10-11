@@ -701,6 +701,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://docs.run.ai/home/whats-new-2-8/</loc>
+         <lastmod>2022-10-11</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://docs.run.ai/home/whats-new-2020/</loc>
          <lastmod>2022-10-11</lastmod>
          <changefreq>daily</changefreq>
