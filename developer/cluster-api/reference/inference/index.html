@@ -169,78 +169,91 @@
 <a id=__codelineno-0-169 name=__codelineno-0-169 href=#__codelineno-0-169></a>     Project. For more information see the Projects setup guide at
 <a id=__codelineno-0-170 name=__codelineno-0-170 href=#__codelineno-0-170></a>     https://docs.run.ai/admin/admin-ui-setup/project-setup.
 <a id=__codelineno-0-171 name=__codelineno-0-171 href=#__codelineno-0-171></a>
-<a id=__codelineno-0-172 name=__codelineno-0-172 href=#__codelineno-0-172></a>   ports    &lt;Object&gt;
-<a id=__codelineno-0-173 name=__codelineno-0-173 href=#__codelineno-0-173></a>     Specifies a set of ports exposed from the container running the created
-<a id=__codelineno-0-174 name=__codelineno-0-174 href=#__codelineno-0-174></a>     workload. Used together with --service-type.
-<a id=__codelineno-0-175 name=__codelineno-0-175 href=#__codelineno-0-175></a>
-<a id=__codelineno-0-176 name=__codelineno-0-176 href=#__codelineno-0-176></a>   pvcs &lt;Object&gt;
-<a id=__codelineno-0-177 name=__codelineno-0-177 href=#__codelineno-0-177></a>     Specifies persistent volume claims to mount into a container running the
-<a id=__codelineno-0-178 name=__codelineno-0-178 href=#__codelineno-0-178></a>     created workload.
-<a id=__codelineno-0-179 name=__codelineno-0-179 href=#__codelineno-0-179></a>
-<a id=__codelineno-0-180 name=__codelineno-0-180 href=#__codelineno-0-180></a>   runAsGid &lt;Object&gt;
-<a id=__codelineno-0-181 name=__codelineno-0-181 href=#__codelineno-0-181></a>     Specifies the Unix group id with which the container should run. Will be
-<a id=__codelineno-0-182 name=__codelineno-0-182 href=#__codelineno-0-182></a>     used only if runAsUser is set to true.
-<a id=__codelineno-0-183 name=__codelineno-0-183 href=#__codelineno-0-183></a>
-<a id=__codelineno-0-184 name=__codelineno-0-184 href=#__codelineno-0-184></a>   runAsUid &lt;Object&gt;
-<a id=__codelineno-0-185 name=__codelineno-0-185 href=#__codelineno-0-185></a>     Specifies the Unix user id with which the container running the created
-<a id=__codelineno-0-186 name=__codelineno-0-186 href=#__codelineno-0-186></a>     workload should run. Will be used only if runAsUser is set to true.
-<a id=__codelineno-0-187 name=__codelineno-0-187 href=#__codelineno-0-187></a>
-<a id=__codelineno-0-188 name=__codelineno-0-188 href=#__codelineno-0-188></a>   runAsUser    &lt;Object&gt;
-<a id=__codelineno-0-189 name=__codelineno-0-189 href=#__codelineno-0-189></a>     Limits the container running the created workload to run in the context of
-<a id=__codelineno-0-190 name=__codelineno-0-190 href=#__codelineno-0-190></a>     a specific non-root user. The user id is provided by the runAsUid field.
-<a id=__codelineno-0-191 name=__codelineno-0-191 href=#__codelineno-0-191></a>     This would manifest itself in access to operating system resources, in the
-<a id=__codelineno-0-192 name=__codelineno-0-192 href=#__codelineno-0-192></a>     ownership of new folders created under shared directories, etc.
-<a id=__codelineno-0-193 name=__codelineno-0-193 href=#__codelineno-0-193></a>     Alternatively, if your cluster is connected to Run:ai via SAML, you can map
-<a id=__codelineno-0-194 name=__codelineno-0-194 href=#__codelineno-0-194></a>     the container to use the Linux UID/GID which is stored in the
-<a id=__codelineno-0-195 name=__codelineno-0-195 href=#__codelineno-0-195></a>     organization&#39;s directory. For more information see the User Identity guide
-<a id=__codelineno-0-196 name=__codelineno-0-196 href=#__codelineno-0-196></a>     at https://docs.run.ai/admin/runai-setup/config/non-root-containers/
-<a id=__codelineno-0-197 name=__codelineno-0-197 href=#__codelineno-0-197></a>
-<a id=__codelineno-0-198 name=__codelineno-0-198 href=#__codelineno-0-198></a>   s3   &lt;Object&gt;
-<a id=__codelineno-0-199 name=__codelineno-0-199 href=#__codelineno-0-199></a>     Specifies S3 buckets to mount into the container running the workload
+<a id=__codelineno-0-172 name=__codelineno-0-172 href=#__codelineno-0-172></a>   nodePool &lt;Object&gt;
+<a id=__codelineno-0-173 name=__codelineno-0-173 href=#__codelineno-0-173></a>     Specifies a group of nodes (machines) on which the workload will run. 
+<a id=__codelineno-0-174 name=__codelineno-0-174 href=#__codelineno-0-174></a>     To use this feature, your Administrator will need to label nodes and 
+<a id=__codelineno-0-175 name=__codelineno-0-175 href=#__codelineno-0-175></a>     create a node-pool, as explained in the Group Nodes guide at 
+<a id=__codelineno-0-176 name=__codelineno-0-176 href=#__codelineno-0-176></a>     https://docs.run.ai/admin/researcher-setup/limit-to-node-group.
+<a id=__codelineno-0-177 name=__codelineno-0-177 href=#__codelineno-0-177></a>     Administrator can assign quota for each node-pool in any of the 
+<a id=__codelineno-0-178 name=__codelineno-0-178 href=#__codelineno-0-178></a>     Projects and Departments that the system contains. This flag
+<a id=__codelineno-0-179 name=__codelineno-0-179 href=#__codelineno-0-179></a>     can optionally be used in conjunction with NodeType and Project-based
+<a id=__codelineno-0-180 name=__codelineno-0-180 href=#__codelineno-0-180></a>     affinity. In this case, the combination of both flags is used to refine
+<a id=__codelineno-0-181 name=__codelineno-0-181 href=#__codelineno-0-181></a>     the list of allowable nodes from a node-pool which the workload can 
+<a id=__codelineno-0-182 name=__codelineno-0-182 href=#__codelineno-0-182></a>     use to run. For more information see the Projects setup guide at
+<a id=__codelineno-0-183 name=__codelineno-0-183 href=#__codelineno-0-183></a>     https://docs.run.ai/admin/admin-ui-setup/project-setup.
+<a id=__codelineno-0-184 name=__codelineno-0-184 href=#__codelineno-0-184></a>
+<a id=__codelineno-0-185 name=__codelineno-0-185 href=#__codelineno-0-185></a>   ports    &lt;Object&gt;
+<a id=__codelineno-0-186 name=__codelineno-0-186 href=#__codelineno-0-186></a>     Specifies a set of ports exposed from the container running the created
+<a id=__codelineno-0-187 name=__codelineno-0-187 href=#__codelineno-0-187></a>     workload. Used together with --service-type.
+<a id=__codelineno-0-188 name=__codelineno-0-188 href=#__codelineno-0-188></a>
+<a id=__codelineno-0-189 name=__codelineno-0-189 href=#__codelineno-0-189></a>   pvcs &lt;Object&gt;
+<a id=__codelineno-0-190 name=__codelineno-0-190 href=#__codelineno-0-190></a>     Specifies persistent volume claims to mount into a container running the
+<a id=__codelineno-0-191 name=__codelineno-0-191 href=#__codelineno-0-191></a>     created workload.
+<a id=__codelineno-0-192 name=__codelineno-0-192 href=#__codelineno-0-192></a>
+<a id=__codelineno-0-193 name=__codelineno-0-193 href=#__codelineno-0-193></a>   runAsGid &lt;Object&gt;
+<a id=__codelineno-0-194 name=__codelineno-0-194 href=#__codelineno-0-194></a>     Specifies the Unix group id with which the container should run. Will be
+<a id=__codelineno-0-195 name=__codelineno-0-195 href=#__codelineno-0-195></a>     used only if runAsUser is set to true.
+<a id=__codelineno-0-196 name=__codelineno-0-196 href=#__codelineno-0-196></a>
+<a id=__codelineno-0-197 name=__codelineno-0-197 href=#__codelineno-0-197></a>   runAsUid &lt;Object&gt;
+<a id=__codelineno-0-198 name=__codelineno-0-198 href=#__codelineno-0-198></a>     Specifies the Unix user id with which the container running the created
+<a id=__codelineno-0-199 name=__codelineno-0-199 href=#__codelineno-0-199></a>     workload should run. Will be used only if runAsUser is set to true.
 <a id=__codelineno-0-200 name=__codelineno-0-200 href=#__codelineno-0-200></a>
-<a id=__codelineno-0-201 name=__codelineno-0-201 href=#__codelineno-0-201></a>   serviceType  &lt;Object&gt;
-<a id=__codelineno-0-202 name=__codelineno-0-202 href=#__codelineno-0-202></a>     Specifies the service exposure method for created workloads. Options are:
-<a id=__codelineno-0-203 name=__codelineno-0-203 href=#__codelineno-0-203></a>     portforward, loadbalancer, nodeport, ingress. Different service methods
-<a id=__codelineno-0-204 name=__codelineno-0-204 href=#__codelineno-0-204></a>     have different endpoint structures. For more information see the External
-<a id=__codelineno-0-205 name=__codelineno-0-205 href=#__codelineno-0-205></a>     Access to Containers guide on
-<a id=__codelineno-0-206 name=__codelineno-0-206 href=#__codelineno-0-206></a>     https://docs.run.ai/admin/runai-setup/config/allow-external-access-to-containers/
-<a id=__codelineno-0-207 name=__codelineno-0-207 href=#__codelineno-0-207></a>
-<a id=__codelineno-0-208 name=__codelineno-0-208 href=#__codelineno-0-208></a>   stdin    &lt;Object&gt;
-<a id=__codelineno-0-209 name=__codelineno-0-209 href=#__codelineno-0-209></a>     Instructs the system to keep stdin open for the container(s) running the
-<a id=__codelineno-0-210 name=__codelineno-0-210 href=#__codelineno-0-210></a>     created workload, even if nothing is attached.
-<a id=__codelineno-0-211 name=__codelineno-0-211 href=#__codelineno-0-211></a>
-<a id=__codelineno-0-212 name=__codelineno-0-212 href=#__codelineno-0-212></a>   supplementalGroups   &lt;Object&gt;
-<a id=__codelineno-0-213 name=__codelineno-0-213 href=#__codelineno-0-213></a>     &#39;;&#39; separated list of supplemental group IDs. Will be added to the security
-<a id=__codelineno-0-214 name=__codelineno-0-214 href=#__codelineno-0-214></a>     context of the container running the created workload.
-<a id=__codelineno-0-215 name=__codelineno-0-215 href=#__codelineno-0-215></a>
-<a id=__codelineno-0-216 name=__codelineno-0-216 href=#__codelineno-0-216></a>   target   &lt;Object&gt;
-<a id=__codelineno-0-217 name=__codelineno-0-217 href=#__codelineno-0-217></a>     The target value for the autoscaling metric
-<a id=__codelineno-0-218 name=__codelineno-0-218 href=#__codelineno-0-218></a>
-<a id=__codelineno-0-219 name=__codelineno-0-219 href=#__codelineno-0-219></a>   tolerations  &lt;Object&gt;
-<a id=__codelineno-0-220 name=__codelineno-0-220 href=#__codelineno-0-220></a>     Toleration rules which apply to the pods running the workload. Toleration
-<a id=__codelineno-0-221 name=__codelineno-0-221 href=#__codelineno-0-221></a>     rules guide (but do not require) the system to which node each pod can be
-<a id=__codelineno-0-222 name=__codelineno-0-222 href=#__codelineno-0-222></a>     scheduled to or evicted from, based on matching between those rules and the
-<a id=__codelineno-0-223 name=__codelineno-0-223 href=#__codelineno-0-223></a>     set of taints defined for each Kubernetes node.
+<a id=__codelineno-0-201 name=__codelineno-0-201 href=#__codelineno-0-201></a>   runAsUser    &lt;Object&gt;
+<a id=__codelineno-0-202 name=__codelineno-0-202 href=#__codelineno-0-202></a>     Limits the container running the created workload to run in the context of
+<a id=__codelineno-0-203 name=__codelineno-0-203 href=#__codelineno-0-203></a>     a specific non-root user. The user id is provided by the runAsUid field.
+<a id=__codelineno-0-204 name=__codelineno-0-204 href=#__codelineno-0-204></a>     This would manifest itself in access to operating system resources, in the
+<a id=__codelineno-0-205 name=__codelineno-0-205 href=#__codelineno-0-205></a>     ownership of new folders created under shared directories, etc.
+<a id=__codelineno-0-206 name=__codelineno-0-206 href=#__codelineno-0-206></a>     Alternatively, if your cluster is connected to Run:ai via SAML, you can map
+<a id=__codelineno-0-207 name=__codelineno-0-207 href=#__codelineno-0-207></a>     the container to use the Linux UID/GID which is stored in the
+<a id=__codelineno-0-208 name=__codelineno-0-208 href=#__codelineno-0-208></a>     organization&#39;s directory. For more information see the User Identity guide
+<a id=__codelineno-0-209 name=__codelineno-0-209 href=#__codelineno-0-209></a>     at https://docs.run.ai/admin/runai-setup/config/non-root-containers/
+<a id=__codelineno-0-210 name=__codelineno-0-210 href=#__codelineno-0-210></a>
+<a id=__codelineno-0-211 name=__codelineno-0-211 href=#__codelineno-0-211></a>   s3   &lt;Object&gt;
+<a id=__codelineno-0-212 name=__codelineno-0-212 href=#__codelineno-0-212></a>     Specifies S3 buckets to mount into the container running the workload
+<a id=__codelineno-0-213 name=__codelineno-0-213 href=#__codelineno-0-213></a>
+<a id=__codelineno-0-214 name=__codelineno-0-214 href=#__codelineno-0-214></a>   serviceType  &lt;Object&gt;
+<a id=__codelineno-0-215 name=__codelineno-0-215 href=#__codelineno-0-215></a>     Specifies the service exposure method for created workloads. Options are:
+<a id=__codelineno-0-216 name=__codelineno-0-216 href=#__codelineno-0-216></a>     portforward, loadbalancer, nodeport, ingress. Different service methods
+<a id=__codelineno-0-217 name=__codelineno-0-217 href=#__codelineno-0-217></a>     have different endpoint structures. For more information see the External
+<a id=__codelineno-0-218 name=__codelineno-0-218 href=#__codelineno-0-218></a>     Access to Containers guide on
+<a id=__codelineno-0-219 name=__codelineno-0-219 href=#__codelineno-0-219></a>     https://docs.run.ai/admin/runai-setup/config/allow-external-access-to-containers/
+<a id=__codelineno-0-220 name=__codelineno-0-220 href=#__codelineno-0-220></a>
+<a id=__codelineno-0-221 name=__codelineno-0-221 href=#__codelineno-0-221></a>   stdin    &lt;Object&gt;
+<a id=__codelineno-0-222 name=__codelineno-0-222 href=#__codelineno-0-222></a>     Instructs the system to keep stdin open for the container(s) running the
+<a id=__codelineno-0-223 name=__codelineno-0-223 href=#__codelineno-0-223></a>     created workload, even if nothing is attached.
 <a id=__codelineno-0-224 name=__codelineno-0-224 href=#__codelineno-0-224></a>
-<a id=__codelineno-0-225 name=__codelineno-0-225 href=#__codelineno-0-225></a>   tty  &lt;Object&gt;
-<a id=__codelineno-0-226 name=__codelineno-0-226 href=#__codelineno-0-226></a>     Instructs the system to allocate a pseudo-TTY for the created workload.
-<a id=__codelineno-0-227 name=__codelineno-0-227 href=#__codelineno-0-227></a>
-<a id=__codelineno-0-228 name=__codelineno-0-228 href=#__codelineno-0-228></a>   usage    &lt;string&gt;
-<a id=__codelineno-0-229 name=__codelineno-0-229 href=#__codelineno-0-229></a>     The intended usage of this workload. possible values are &quot;Template&quot;: this
-<a id=__codelineno-0-230 name=__codelineno-0-230 href=#__codelineno-0-230></a>     workload is used as the base for other workloads. &quot;Submit&quot;: this workload
-<a id=__codelineno-0-231 name=__codelineno-0-231 href=#__codelineno-0-231></a>     is used for submitting a job and/or other Kubernetes resources.
-<a id=__codelineno-0-232 name=__codelineno-0-232 href=#__codelineno-0-232></a>
-<a id=__codelineno-0-233 name=__codelineno-0-233 href=#__codelineno-0-233></a>   username &lt;Object&gt;
-<a id=__codelineno-0-234 name=__codelineno-0-234 href=#__codelineno-0-234></a>     Display-only field describing the user who owns the workload. The data is
-<a id=__codelineno-0-235 name=__codelineno-0-235 href=#__codelineno-0-235></a>     not used for authentication or authorization purposes.
-<a id=__codelineno-0-236 name=__codelineno-0-236 href=#__codelineno-0-236></a>
-<a id=__codelineno-0-237 name=__codelineno-0-237 href=#__codelineno-0-237></a>   volumes  &lt;Object&gt;
-<a id=__codelineno-0-238 name=__codelineno-0-238 href=#__codelineno-0-238></a>     Specifies volumes to mount into a container running the created workload.
-<a id=__codelineno-0-239 name=__codelineno-0-239 href=#__codelineno-0-239></a>
-<a id=__codelineno-0-240 name=__codelineno-0-240 href=#__codelineno-0-240></a>   workingDir   &lt;Object&gt;
-<a id=__codelineno-0-241 name=__codelineno-0-241 href=#__codelineno-0-241></a>     Specifies a directory that will be used as the current directory when the
-<a id=__codelineno-0-242 name=__codelineno-0-242 href=#__codelineno-0-242></a>     container running the created workload starts.
-</code></pre></div> <hr> <div class=md-source-file> <small> Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class=timeago datetime=2022-10-10T21:10:07+00:00 locale=en></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2022-10-10</span> <br> Created: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class=timeago datetime=2022-08-19T09:59:11+00:00 locale=en></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2022-08-19</span> </small> </div> <!-- Giscus --> <!-- <h2 id="__comments">Comments</h2> --> <!-- Replace with generated snippet --> <script src=https://giscus.app/client.js data-repo=run-ai/docs data-repo-id="MDEwOlJlcG9zaXRvcnkyODAxODMxOTY=" data-category=General data-category-id=MDE4OkRpc2N1c3Npb25DYXRlZ29yeTE1MTA2MDU4 data-mapping=pathname data-strict=0 data-reactions-enabled=1 data-emit-metadata=0 data-input-position=bottom data-theme=light data-lang=en crossorigin=anonymous async>
+<a id=__codelineno-0-225 name=__codelineno-0-225 href=#__codelineno-0-225></a>   supplementalGroups   &lt;Object&gt;
+<a id=__codelineno-0-226 name=__codelineno-0-226 href=#__codelineno-0-226></a>     &#39;;&#39; separated list of supplemental group IDs. Will be added to the security
+<a id=__codelineno-0-227 name=__codelineno-0-227 href=#__codelineno-0-227></a>     context of the container running the created workload.
+<a id=__codelineno-0-228 name=__codelineno-0-228 href=#__codelineno-0-228></a>
+<a id=__codelineno-0-229 name=__codelineno-0-229 href=#__codelineno-0-229></a>   target   &lt;Object&gt;
+<a id=__codelineno-0-230 name=__codelineno-0-230 href=#__codelineno-0-230></a>     The target value for the autoscaling metric
+<a id=__codelineno-0-231 name=__codelineno-0-231 href=#__codelineno-0-231></a>
+<a id=__codelineno-0-232 name=__codelineno-0-232 href=#__codelineno-0-232></a>   tolerations  &lt;Object&gt;
+<a id=__codelineno-0-233 name=__codelineno-0-233 href=#__codelineno-0-233></a>     Toleration rules which apply to the pods running the workload. Toleration
+<a id=__codelineno-0-234 name=__codelineno-0-234 href=#__codelineno-0-234></a>     rules guide (but do not require) the system to which node each pod can be
+<a id=__codelineno-0-235 name=__codelineno-0-235 href=#__codelineno-0-235></a>     scheduled to or evicted from, based on matching between those rules and the
+<a id=__codelineno-0-236 name=__codelineno-0-236 href=#__codelineno-0-236></a>     set of taints defined for each Kubernetes node.
+<a id=__codelineno-0-237 name=__codelineno-0-237 href=#__codelineno-0-237></a>
+<a id=__codelineno-0-238 name=__codelineno-0-238 href=#__codelineno-0-238></a>   tty  &lt;Object&gt;
+<a id=__codelineno-0-239 name=__codelineno-0-239 href=#__codelineno-0-239></a>     Instructs the system to allocate a pseudo-TTY for the created workload.
+<a id=__codelineno-0-240 name=__codelineno-0-240 href=#__codelineno-0-240></a>
+<a id=__codelineno-0-241 name=__codelineno-0-241 href=#__codelineno-0-241></a>   usage    &lt;string&gt;
+<a id=__codelineno-0-242 name=__codelineno-0-242 href=#__codelineno-0-242></a>     The intended usage of this workload. possible values are &quot;Template&quot;: this
+<a id=__codelineno-0-243 name=__codelineno-0-243 href=#__codelineno-0-243></a>     workload is used as the base for other workloads. &quot;Submit&quot;: this workload
+<a id=__codelineno-0-244 name=__codelineno-0-244 href=#__codelineno-0-244></a>     is used for submitting a job and/or other Kubernetes resources.
+<a id=__codelineno-0-245 name=__codelineno-0-245 href=#__codelineno-0-245></a>
+<a id=__codelineno-0-246 name=__codelineno-0-246 href=#__codelineno-0-246></a>   username &lt;Object&gt;
+<a id=__codelineno-0-247 name=__codelineno-0-247 href=#__codelineno-0-247></a>     Display-only field describing the user who owns the workload. The data is
+<a id=__codelineno-0-248 name=__codelineno-0-248 href=#__codelineno-0-248></a>     not used for authentication or authorization purposes.
+<a id=__codelineno-0-249 name=__codelineno-0-249 href=#__codelineno-0-249></a>
+<a id=__codelineno-0-250 name=__codelineno-0-250 href=#__codelineno-0-250></a>   volumes  &lt;Object&gt;
+<a id=__codelineno-0-251 name=__codelineno-0-251 href=#__codelineno-0-251></a>     Specifies volumes to mount into a container running the created workload.
+<a id=__codelineno-0-252 name=__codelineno-0-252 href=#__codelineno-0-252></a>
+<a id=__codelineno-0-253 name=__codelineno-0-253 href=#__codelineno-0-253></a>   workingDir   &lt;Object&gt;
+<a id=__codelineno-0-254 name=__codelineno-0-254 href=#__codelineno-0-254></a>     Specifies a directory that will be used as the current directory when the
+<a id=__codelineno-0-255 name=__codelineno-0-255 href=#__codelineno-0-255></a>     container running the created workload starts.
+</code></pre></div> <hr> <div class=md-source-file> <small> Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class=timeago datetime=2022-11-13T08:03:54+00:00 locale=en></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2022-11-13</span> <br> Created: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class=timeago datetime=2022-08-19T09:59:11+00:00 locale=en></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2022-08-19</span> </small> </div> <!-- Giscus --> <!-- <h2 id="__comments">Comments</h2> --> <!-- Replace with generated snippet --> <script src=https://giscus.app/client.js data-repo=run-ai/docs data-repo-id="MDEwOlJlcG9zaXRvcnkyODAxODMxOTY=" data-category=General data-category-id=MDE4OkRpc2N1c3Npb25DYXRlZ29yeTE1MTA2MDU4 data-mapping=pathname data-strict=0 data-reactions-enabled=1 data-emit-metadata=0 data-input-position=bottom data-theme=light data-lang=en crossorigin=anonymous async>
 </script> <!-- Synchronize Giscus theme with palette --> <script>
     var giscus = document.querySelector("script[src*=giscus]")
 
