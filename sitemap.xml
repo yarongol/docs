@@ -481,6 +481,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://docs.run.ai/admin/runai-setup/self-hosted/k8s/additional-clusters/</loc>
+         <lastmod>2022-11-20</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://docs.run.ai/admin/runai-setup/self-hosted/k8s/backend/</loc>
          <lastmod>2022-11-20</lastmod>
          <changefreq>daily</changefreq>
