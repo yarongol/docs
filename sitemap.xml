@@ -191,22 +191,17 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.run.ai/Researcher/researcher-library/researcher-library-overview/</loc>
-         <lastmod>2022-11-22</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.run.ai/Researcher/researcher-library/rl-hpo-support/</loc>
-         <lastmod>2022-11-22</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://docs.run.ai/Researcher/scheduling/allocation-of-cpu-and-memory/</loc>
          <lastmod>2022-11-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.run.ai/Researcher/scheduling/fractions/</loc>
+         <lastmod>2022-11-22</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.run.ai/Researcher/scheduling/hpo/</loc>
          <lastmod>2022-11-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
