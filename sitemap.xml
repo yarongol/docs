@@ -416,11 +416,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.run.ai/admin/runai-setup/cluster-setup/single-node-install/</loc>
-         <lastmod>2022-11-24</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://docs.run.ai/admin/runai-setup/config/access-roles/</loc>
          <lastmod>2022-11-24</lastmod>
          <changefreq>daily</changefreq>
