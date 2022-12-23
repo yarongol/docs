@@ -696,6 +696,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://docs.run.ai/home/whats-new-2-9/</loc>
+         <lastmod>2022-12-23</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://docs.run.ai/home/whats-new-2020/</loc>
          <lastmod>2022-12-23</lastmod>
          <changefreq>daily</changefreq>
@@ -707,6 +712,11 @@
     </url>
     <url>
          <loc>https://docs.run.ai/home/whats-new-2022/</loc>
+         <lastmod>2022-12-23</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.run.ai/home/whats-new-3-0/</loc>
          <lastmod>2022-12-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
